@@ -1,0 +1,53 @@
+.div__titulo__cadastro{
+  position: relative;
+  min-height: 120px;
+  margin-bottom: 10px;
+}
+
+.botao--salvar{
+  position: absolute;
+  bottom: 0;
+  right: 15px
+}
+
+.tabela{
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #2C343A;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+  background: #fff;
+  box-shadow:  8px 8px 60px #b1b1b166, -13px -9px 60px #efefef59
+}
+
+.divTable{
+  display: flex;
+  width: 100%;
+  overflow: auto;
+  max-height: 350px;
+}
+
+.table{
+  text-align: center;
+  padding-inline: 8px;
+  border-collapse: separate;
+  border-radius: 5px;
+  font-size: medium;
+  max-height: 100%;
+  width: 100%;
+}
+
+.headTable th{
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #757575;
+}
+
+.itensTable{
+  text-align: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #0032222b;
+  vertical-align: middle !important;
+}

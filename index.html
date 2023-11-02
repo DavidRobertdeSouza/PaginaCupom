@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MultiPedidos</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/alert.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+  <link rel="stylesheet" href="assets/css/estiloCadastro.css">
+  <link rel="stylesheet" href="assets/css/estiloLista.css">
+  <link rel="stylesheet" href="assets/css/estiloGrafico.css">
+  <link rel="stylesheet" href="assets/css/estiloBotaoToggle.css">
+
+  <script src="https://kit.fontawesome.com/7ed21a5751.js" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
+  <script src="./scripts/global.js" defer></script>
+  <script src="./scripts/scriptCadastro.js" defer></script>
+  <script src="./scripts/scriptGrafico.js" defer></script>
+  <script src="./scripts/scriptLista.js" defer></script>
+  <script src="./scripts/alert.js" defer></script>
+  <script src="./scripts/modal.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <button class="cabecalho__menu" aria-label="menu"><i></i></button>
+    <img src="./assets/img/logo_MP-white.png" alt="Logotipo da Multipedidos" class="cabecalho__logo">
+    <p class="cabecalho__perfil">
+      <img src="./assets/img/foto_David.jpeg" class="cabecalho_perfil__foto" alt="foto perfil do usuário" />David Robert</p>
+    <button class="cabecalho__notificacao" aria-label="notificação"><i></i></button>
+  </header>
+
+  <div id= div-notification class='notification hide d-none'>
+    <span id = icon-notification></span>
+    <span class='msg'></span>
+    <span class='close-btn'>
+        <span class='fa-solid fa-xmark'></span>
+    </span>
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close__modal">&times;</span>
+        <h2>Erro</h2>
+      </div>
+      <div class="modal-body" id='modal-body'>
+        <p>Por favor, verifique se os dados estão no formato correto!</p>
+      </div>
+    </div>
+  </div>
+
+
+  <nav class="menu-lateral">
+    <img src="./assets/img/logo_MP.png" alt="Logotipo da Multipedidos" class="menu-lateral__logo">
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-regular fa-circle-question"></i>
+      <p>Ajuda</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-dollar-sign"></i>
+      <p>Central de Pagamentos</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-egg"></i>
+      <p>Ingredientes</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-utensils"></i>
+      <p>Cardápio</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-box-open"></i>
+      <p>Editor de Produtos</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-regular fa-paper-plane"></i>
+      <p>Pedidos</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-box"></i>
+      <p>Controle de Estoque</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-bolt"></i>
+      <p>Relatórios</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-regular fa-compass"></i>
+      <p>MP Boy</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-star"></i>
+      <p>Fidelidade</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-gear"></i>
+      <p>Configurações</p>
+    </a>
+    <a href="#" class="menu-lateral__link">
+      <i class="fa-solid fa-globe"></i>
+      <p>Taxas de Entrega</p>
+    </a>
+  </nav>
+
+  <main class="principal">
+    <section class="cadastro">
+      <div class="status__cadastro">
+        <div class="status__cadastro__info">
+        </div>
+        <div class="cadastro__div__imagem">
+          <img src="./assets/img/cupom-cadastro.jpg" alt="imagem de um cupom de desconto laranja">
+        </div>
+      </div>
+
+      <form class="cadastro__form" id="form-cadastro">
+        <a class="botao__info fa-regular fa-circle-question" id="info-cadastro"> </a>
+        <div class="tipo__cupom span-2">
+          
+          <h3 class="cadastro__titulo">Criar cupom</h3>
+          <h4 class="cadastro__subtitulo">Qual tipo de cupom deseja criar?</h4>
+          <div>
+            
+          </div>
+          <div class="tipo__cupom__botoes">
+            <a class="botao botao--ativo" data-tipo="Geral">Cupom Geral</a>
+            <a class="botao" data-tipo="Unico">Uso Único</a>
+          </div>
+        </div>
+  
+        <div class="form__div__input span-2">
+          <label for="código-cupom"> Código do Cupom </label>
+          <input type="text" id="código-cupom" class="input--codigo" readonly>
+          <a class="gerar-codigo" id="gerar-codigo">
+            <i class="fa-solid fa-arrows-rotate"> </i>
+            <p>Gerar Novo Código</p>
+          </a>
+        </div>
+  
+        <div class="form__div__input">
+          <label for="select-tipo"> Selecione o tipo de desconto </label>
+          <select name="select-tipo" id="select-tipo-desconto">
+            <option value="fixo" selected>Desconto Fixo</option>
+            <option value="porcentagem">Porcentagem de desconto</option>
+          </select>
+        </div>
+  
+        <div class="form__div__input" id="div-desconto-valor">
+          <label id="label-desconto" for="desconto-valor"> Qual o valor do desconto em reais? </label>
+          <input type="text" id="desconto-valor" placeholder="R$ 0,00" required>
+        </div>
+  
+        <div class="form__div__input">
+          <label for="data-limite"> Data limite: </label>
+          <input type="date" id="data-limite" required>
+        </div>
+  
+        <div class="form__div__input">
+          <label for="valor-min"> Valor mínimo do pedido: </label>
+          <input type="text" id="valor-min" placeholder="R$ 0,00">
+        </div>
+
+        <input class="form__botao__input botao botao--ativo span-2" type="submit" value="Cadastrar Cupom">
+      </form>
+    </section>
+
+
+    <section class="tabela">
+      <a class="botao__info fa-regular fa-circle-question" id="info-lista"> </a>
+      <div class="div__titulo__cadastro">
+        <h3 class="cadastro__titulo">Cupons cadastrados</h3>
+        <button class="botao botao--salvar" id="salvarAlteracoes">Salvar</button>
+      </div>
+      <div class="divTable" id='divTable'>
+        <table id="tableAcao" class="table">
+          <thead id="headTable" class="headTable">
+            <tr>
+              <th class="itensTable">Código</th>
+              <th class="itensTable">Desconto</th>
+              <th class="itensTable">Tipo</th>
+              <th class="itensTable">Pedido Mínimo</th>
+              <th class="itensTable">Vezes Usado</th>
+              <th class="itensTable">Data Limite</th>
+              <th class="itensTable">Status</th>
+              <th class="itensTable"> </th>
+              <th class="itensTable"> </th>
+              <th class="itensTable"> </th>
+            </tr>
+          </thead>
+          <tbody id="bodyTable" class='bodyTable'>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <section class="grafico">
+      <a class="botao__info fa-regular fa-circle-question" id="info-grafico"> </a>
+      <h3 class="cadastro__titulo">Gráficos</h3>
+      <div class="div__info__grafico">
+        <div class="div__grafico div__grafico--pizza">
+        </div>
+        <div class="div__grafico div__grafico--linha">
+        </div>
+      </div>
+    </section>
+
+    
+  </main>
+</body>
+</html>

@@ -1,0 +1,239 @@
+@font-face {
+  font-family: 'icones';
+  src: url(../font/icones.ttf);
+}
+
+body{
+  background-color: #ffffff;
+  font-family: 'Open Sans', 'icones', sans-serif;
+  color: #FFFFFF;
+  font-size: 62.5%;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #3a3a3a;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #757575;
+  border-radius: 20px;
+  border: 3px solid #3a3a3a;
+}
+
+@media screen and (min-width: 1000px){
+  body{
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.botao {
+  background: #9090b100;
+  border-radius: 999px;
+  box-shadow: #979797 6px 5px 20px -10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 1px solid #b6b6b6;
+  color: #757575;
+}
+
+.botao:hover{
+  transform: scale(1.1)
+}
+
+.botao--ativo{
+  background-color: #FF7143;
+  box-shadow: #FF7143 0 10px 20px -10px;
+  color: white !important;
+}
+
+.botao--disabled{
+  background: #9090b100;
+  color: #757575 !important;
+  box-shadow: #979797 6px 5px 20px -10px;
+  cursor: not-allowed;
+}
+.botao--disabled:hover{
+  background: #9090b100;
+  transform: none;
+}
+
+.cabecalho{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(109.6deg, rgb(255, 78, 80) 11.2%, rgb(249, 149, 35) 100.2%);
+  padding: 8px 16px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.16);
+
+}
+
+.cabecalho__menu i::before{
+  content: "\e904";
+  font-size: 24px;
+}
+
+.cabecalho__notificacao i::before{
+  content: '\e906';
+  font-size: 24px;
+}
+
+.cabecalho__logo{
+  width: 40px;
+}
+
+.cabecalho__perfil{
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .cabecalho{
+    display: grid;
+    column-gap: 32px;
+    grid-template-columns: 1fr auto;
+    padding: 16px 60px;
+    height: 80px;
+    box-sizing: border-box;
+    grid-column: 2;
+  }
+
+  .cabecalho__menu{
+    display: none;
+  }
+
+  .cabecalho__logo{
+    display: none;
+  }
+
+  .cabecalho__perfil{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 8px;
+    align-items: center;
+    justify-self: flex-end;
+    color: #474747;
+    padding: 8px 32px;
+    border-right: 1px solid #474747;
+  }
+  
+  .cabecalho_perfil__foto {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  .cabecalho__perfil::after{
+    content: '\e90d';
+    color: #FFF;
+    font-size: 1.5rem;
+  }
+}
+
+.menu-lateral{
+  display: flex;
+  flex-direction: column;
+  background-color: #15191C;
+  width: 75vw;
+  height: 100vh;
+  position: absolute;
+  left: -100vw;
+  transition: .25s;
+  gap: 10px;
+  overflow-x: auto;
+  z-index: 3;
+}
+
+.menu-lateral--ativo{
+  left: 0;
+  transition: .25s;
+}
+
+.menu-lateral__logo{
+  width: 118px;
+  align-self: center;
+  padding: 16px;  
+}
+
+.menu-lateral__link{
+  min-height: 32px;
+  color: #95999C;
+  padding-left: 32px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+.menu-lateral__link--ativo{
+  color: #FFFFFF;
+  padding-left: 56px;
+  border-left: 8px solid #FFFFFF;
+}
+
+.menu-lateral__link::before{
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  position: absolute;
+  left: 24px;
+}
+
+
+@media screen and (min-width: 1000px) {
+  .menu-lateral{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 200px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+}
+
+.principal{
+  padding: 24px 16px;
+  display: grid;
+  gap: 38px;
+  box-sizing: border-box;
+  width: calc(100vw - 20px);
+}
+
+@media screen and (min-width: 1000px){
+  .principal{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 60px;
+    grid-column: 2;
+    width: calc(100vw - 220px);
+  }
+
+}
+
+
+
+/* ESTILOS GENÉRICOS */
+.d-none{
+  display: none !important;
+}
+
+.span-2{
+  grid-column: span 2;
+  align-self: center;
+}
+
+.bold{
+  font-weight: bold;
+}

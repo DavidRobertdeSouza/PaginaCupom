@@ -1,0 +1,38 @@
+.grafico{
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #2C343A;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+  background: #fff;
+  box-shadow:  8px 8px 60px #b1b1b166, -13px -9px 60px #efefef59;
+  position: relative;
+}
+
+.div__info__grafico{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+  row-gap: 50px;
+}
+
+.div__grafico{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  gap: 20px;
+  height: 300px;
+  max-width: 100%;
+  padding-inline: 20px;
+}
+
+.div__grafico--linha{
+  width: 450px;
+}
+
+.grafico__canvas{
+  /* margin: auto; */
+}

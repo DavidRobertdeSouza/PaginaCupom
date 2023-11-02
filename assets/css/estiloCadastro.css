@@ -1,0 +1,139 @@
+.cadastro{
+  display: flex;
+  width: 100%;
+  min-height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #2C343A;
+  background: #fff;
+  box-shadow:  8px 8px 60px #b1b1b166, -13px -9px 60px #efefef59
+}
+
+.status__cadastro{
+  background: linear-gradient(90deg, #e4b08a 0%, #e9bd9a 50%, #e6b592 100%);
+  text-align: center;
+  position: relative;
+  max-width: 15rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.status__cadastro__info{
+  display: flex;
+  flex-direction: column;
+}
+
+.cadastro__titulo{
+  font-size: 1.5rem;
+  padding: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cadastro__subtitulo{
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+
+.cadastro__toggle{
+  font-size: 1rem;
+  padding-top: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cadastro__div__imagem{
+  width: 100%;
+}
+
+.cadastro__form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 10px 15px 60px #3d3d3d87, -15px -14px 60px #7777776e;
+  padding: 0 20px 20px 20px;
+  gap: 30px 15px;
+  position: relative;
+}
+
+.form__div__input{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 236px;
+  margin: auto;
+}
+
+.form__div__input > label{
+  font-size: 0.9rem;
+}
+
+.form__div__input > input, .form__div__input > select{
+  padding: 8px 6px;
+  border-radius: 5px;
+  border: 1px solid #95999c7d;
+  font-size: 0.8rem;
+}
+
+.input--codigo{
+  letter-spacing: 0.7rem;
+  text-align: center;
+}
+
+.gerar-codigo{
+  display: flex;
+  gap: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tipo__cupom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tipo__cupom__botoes{
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.form__botao__input{
+  align-self: center;
+  justify-self: center;
+  padding: 12px 24px;
+}
+
+@media screen and (max-width: 700px){
+  .cadastro__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0 ;
+  }
+
+  .form__div__input{
+    width: 70%;
+  }
+  
+  .cadastro__subtitulo{
+    font-size: 1rem;
+  }
+
+  .botao{
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .status__cadastro{
+    display: none;
+  }
+} 
