@@ -41,7 +41,7 @@ const adicionarTabela = (valores) => {
     let itemLixeira = ce('td')
     itemLixeira.classList.add('itensTable')
     let lixeira = ce('a')
-    lixeira.classList.add('fa-solid', 'fa-trash-can')
+    lixeira.classList.add('fa-solid', 'fa-trash-can', 'lixeira-button')
     lixeira.dataset.codigo = linha[0]
     lixeira.onclick = (e) => {
       removerItem(e)
@@ -135,11 +135,11 @@ const ordenarListaPorData = (lista) => {
 
 const atualizarLista = async() => {
   listaAtual = JSON.parse(localStorage.getItem('item'))
+  $gerarCodigo.onclick()
   if (listaAtual == undefined){
     return
   } 
 
-  $gerarCodigo.onclick()
   retornaDados(listaAtual)
   contarCodigosGeralEUnico()
 }
